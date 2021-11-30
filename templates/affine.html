@@ -9,15 +9,14 @@
 <body>
     <h1>The Affine Cipher</h1>
     <h3>Explanation</h3>
-    <form id="text">
+    <form action = "http://localhost:3001/affine" method = "POST">
         <h5>Enter the sentence you would like to encrypt.</h5>
-        <input type="text">
-        <input type="submit" text="Submit" action = "http://localhost:3001/affine" method = "POST">
-
-        {% if plaintext %}
-            <p> {{ plaintext }}</p>
-        {% endif %}
+        <input type="text" name = "plaintext">
+        <input type="submit" text="Submit">
     </form>
+    {% if plaintext %}
+        <p> {{ plaintext }}</p>
+    {% endif %}
 
     
 </body>
