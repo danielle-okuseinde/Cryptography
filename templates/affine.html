@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affine - Cryptography</title>
+</head>
+<body>
+    <h1>The Affine Cipher</h1>
+    <h3>Explanation</h3>
+    <form id="text">
+        <h5>Enter the sentence you would like to encrypt.</h5>
+        <input type="text">
+        <input type="submit" text="Submit" action = "http://localhost:3001/affine" method = "POST">
+
+        {% if plaintext %}
+            <p> {{ plaintext }}</p>
+        {% endif %}
+    </form>
+
+    
+</body>
+</html>
