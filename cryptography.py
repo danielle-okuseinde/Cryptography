@@ -6,13 +6,15 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
-def home():
-    return 'Welcome'
+@app.route('/ciphers', methods=['GET'])
+def ciphers():
+    return render_template('ciphers.html')
 
-@app.route('/affine', methods=['GET'])
+@app.route('/affine', methods=['POST', 'GET'])
 def affine():
-    return 'Affine'
+    if request.method == 'POST':
+        message = request.form
+        return message
 
 @app.route('/affine', methods=['GET'])
 def caesar():
