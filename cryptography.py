@@ -13,7 +13,7 @@ def ciphers():
 @app.route('/affine', methods=['POST', 'GET'])
 def affine():
     if request.method == 'POST':
-        message = request.form
+        message = request.form['plaintext']
         return message
 
 @app.route('/affine', methods=['GET'])
@@ -26,14 +26,6 @@ def vigenere():
 
 @app.route('/aristocrat', methods=['GET'])
 def aristocrat():
-    pass
-
-@app.route('/k1', methods=['GET'])
-def k1():
-    pass
-
-@app.route('/k2', methods=['GET'])
-def k2():
     pass
 
 
