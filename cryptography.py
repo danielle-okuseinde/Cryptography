@@ -13,20 +13,33 @@ def ciphers():
 @app.route('/affine', methods=['POST', 'GET'])
 def affine():
     if request.method == 'POST':
-        message = request.form['plaintext']
-        return message
+        pt = request.form['plaintext']
+        a = request.form['a']
+        b = request.form['b']
+       
+        # if a and/or b value isn't filled, return error page
+        # encryption algorithm
+        # make dictionary of what each letter maps to maybe and display that
+        # when all is done, render template w dictionary, plaintext, and ciphertext
+        pass
+    
+@app.route('/affine/encryption', methods=['POST', 'GET'])
+def affine_encryption():
+    pass
 
-@app.route('/affine', methods=['GET'])
+@app.route('/caesar', methods=['GET'])
 def caesar():
     pass
 
-@app.route('/affine', methods=['GET'])
+@app.route('/vigenere', methods=['GET'])
 def vigenere():
     pass
 
 @app.route('/aristocrat', methods=['GET'])
 def aristocrat():
     pass
+
+
 
 
 @app.errorhandler(404)
