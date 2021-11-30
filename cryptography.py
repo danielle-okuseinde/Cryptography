@@ -1,35 +1,33 @@
 import urllib.request 
 import json
 from urllib.request import urlopen, Request
+import flask
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 
-@app.route('/ciphers', methods=['GET'])
+@app.route('/', methods=['GET'])
 def ciphers():
-    return render_template('ciphers.html')
+    return render_template('cryptography.html')
 
 @app.route('/affine', methods=['POST', 'GET'])
 def affine():
     if request.method == 'POST':
-        pt = request.form['plaintext']
-        a = request.form['a']
-        b = request.form['b']
-       
-        # if a and/or b value isn't filled, return error page
-        # encryption algorithm
-        # make dictionary of what each letter maps to maybe and display that
-        # when all is done, render template w dictionary, plaintext, and ciphertext
-        pass
-    
+        plaintext = request.form.get('plaintext')
+        print(plaintext)
+        ciphertext=""
+        return render_template('affine.html', plaintext=plaintext, ciphertext=ciphertext)
+
+    return render_template('affine.html')
+
 @app.route('/affine/encryption', methods=['POST', 'GET'])
 def affine_encryption():
     pass
 
 @app.route('/caesar', methods=['GET'])
 def caesar():
-    pass
+    return 'Caesar'
 
 @app.route('/vigenere', methods=['GET'])
 def vigenere():
@@ -38,9 +36,6 @@ def vigenere():
 @app.route('/aristocrat', methods=['GET'])
 def aristocrat():
     pass
-
-
-
 
 @app.errorhandler(404)
 def err_404(e):
