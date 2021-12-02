@@ -53,6 +53,8 @@ def affine_encrypt(plaintext, a, b):
     for letter in array:
         if letter in crib:
             ciphertext+=crib[letter][0]
+        else:
+            ciphertext+=letter
     
     return ciphertext, crib
 
