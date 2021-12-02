@@ -13,7 +13,7 @@
     </div>
     <div class="content">
         <p>Explanation</p>
-        <form action = "http://localhost:3001/affine" method = "POST">
+        <form name = 'enter' action = "http://localhost:3001/affine" method = "POST">
             <h2>Enter the phrase you would like to encrypt, the a value, and the b value</h2>
             <input type="text" name = "plaintext">
             <input type="text" name = "a" value="a value">
@@ -29,6 +29,26 @@
         {% if error %}
             <p class="error"> {{ error }}</p>
         {% endif %}
+
+        {% if crib %}
+            <table>
+                <tr>
+                    <td class="table-header">Plaintext:</td>
+                    {% for letter in crib %}
+                        <td>{{ letter }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td class="table-header">Ciphertext:</td>
+                    {% for letter in crib %}
+                        <td>{{ crib[letter] }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+        {% endif %}
+
+
+
     </div>
 
     
