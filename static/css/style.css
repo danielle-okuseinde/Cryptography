@@ -1,6 +1,10 @@
+:root{
+    --main-bg-color: blue;
+}
+
 h1{
     color: blue;
-}
+}a
 
 .header, .explanation, .content{
     display: flex;
