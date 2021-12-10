@@ -12,7 +12,7 @@ global encrypt
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('cryptography.html')
+    return render_template('index.html')
 
 
 @app.route('/affine', methods=['POST', 'GET'])
