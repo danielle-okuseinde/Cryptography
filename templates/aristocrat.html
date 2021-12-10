@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Aristocrat - Cryptography</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">The Aristocrat</h1>
+    </div>
+    <div class="content">
+        <p class="explanation">An aristocrat is a monalphabetic substitution cipher where each letter is randomly mapped to a different letter in the alphabet. Because these aren't done mathematically, you have to rely on letter patterns and spacing to crack aristocrats.</p>
+        <form class="aristocrat submit-text" name = 'enter' action = "http://localhost:3001/aristocrat" method = "POST">
+            <h3 class="prompt">Enter the phrase you would like to encrypt.</h3>
+            <input type="text" name = "plaintext">
+            <input class="submit-button" type="submit" text="Submit">
+        </form>
+
+        {% if plaintext %}
+            <p class="code plaintext"> {{ plaintext }}</p>
+            <p class="code ciphertext"> {{ ciphertext }}</p>
+        {% endif %}
+
+        {% if error %}
+            <p class="code error"> {{ error }}</p>
+        {% endif %}
+
+        {% if crib %}
+            <table>
+                <tr>
+                    <th class="table-header">Plaintext:</td>
+                    {% for letter in crib %}
+                        <td>{{ letter }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th class="table-header">Ciphertext:</td>
+                    {% for letter in crib %}
+                        <td>{{ crib[letter] }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+        {% endif %}
+
+        <span class="home">
+            <a href="http://localhost:3001/">Home</a>
+        </span>
+
+    </div>
+    
+</body>
+</html>
