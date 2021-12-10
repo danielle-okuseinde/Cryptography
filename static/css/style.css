@@ -1,24 +1,180 @@
 :root{
-    --main-bg-color: blue;
-}
-
-h1{
-    color: blue;
-}a
-
-.header, .explanation, .content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    --main-bg-color: #7EA3CC;
+    --text-color: #262730;
+    --text-hover: #9da1c4;
+    --secondary-color: #DDF8E8;
+    --computer-font: 'Press Start 2P', cursive;
+    --regular-font: 'Open Sans Condensed', sans-serif;
 }
 
 body{
+    /* Background will probably end up being an image */
+
+}
+
+.content{
+    /* everything is centered */
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--main-bg-color);
 }
-.ciphers{
+
+.head {
+    margin-top: 1%; /*change to be bigger, then add bg/color and font */
+    margin-bottom: 1%;
+    padding: 0%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
     align-items: center;
+  }
+
+  .title{
+      text-align: center;
+      font-family: var(--computer-font);
+  }
+
+  h1{
+    font-size: 60px;
 }
+
+  h2{
+      font-size: 40px;
+  }
+
+  h2.title{
+      padding: 1%;
+      padding-bottom:0%;
+      font-family: var(--computer-font);
+  }
+
+  .small{
+      font-size: 20px;
+  }
+
+  .description{
+      text-align: center;
+      font-size: 30px;
+      padding: 5%;
+      padding-top: 2.5%;
+      font-family: var(--regular-font);
+  }
+
+  .explanation{
+    font-family: var(--regular-font);
+    font-size: 30px;
+    text-align: center;
+    margin: 3%;
+  }
+
+  .prompt{
+      font-family: var(--regular-font);
+      font-size: 30px;
+  }
+
+  span.prompt{
+      font-size: 70px;
+      text-align: center;
+  }
+
+  .submit-text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .affine{
+    padding: 120px;
+  }
+  
+  .aristocrat{
+    padding: 160px;
+  }
+
+  .caesar{
+    padding: 110px;
+  }
+
+  .vigenere{
+    padding: 110px;
+  }
+
+  label{
+    font-family: var(--regular-font);
+  }
+
+  .ciphers{
+      display: inline-block;
+      width: 50%;
+  }
+
+  .ciphers a{
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 40px;
+      font-family: var(--computer-font);
+      display: inline-block;
+      margin: 1.5%;
+
+  }
+
+  .ciphers a:hover{
+      color: var(--text-hover);
+  }
+
+  .code, table{
+      font-family: var(--regular-font);
+      font-size: 30px;
+  }
+
+  input[type=submit]{
+    background-color: var(--text-color);
+    color: white ;
+    border: none;
+    padding: 16px 32px;
+    font-family: var(--regular-font);    
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+  }
+
+  input[type=submit]:hover{
+    background-color: aliceblue;
+    color: var(--text-color)
+  }
+
+  input[type=text]{
+      margin: 1%;
+  }
+
+  .home{
+    margin-left: auto;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 1%;
+    
+  } 
+
+  .home a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--computer-font)
+  }
+
+  .home a:hover{
+    color: aliceblue;
+  }
+  
+  .footer{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 300px;
+      
+  }
+
+  
+
+
