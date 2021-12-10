@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Vigenere - Cryptography</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">The Vigenere Cipher</h1>
+    </div>
+    <div class="content">
+        <p class="explanation">The vigenere cipher is an interesting cipher where a keyword is used to encrypt and decrypt a message. You map each letter of the keyword to a letter in the plaintext/ciphertext, and you repeat the keyword until there are no letters left. Then, you shift each letter in the plaintext/ciphertext by the value of its corresponding keyword letter.</p>
+        <span>
+            <form class="ed-buttons" name="dir" action="http://localhost:3001/vigenere" method="POST">
+                <input class="submit-button" type="submit" name = "encrypt-or-decrypt" value="Encrypt">    
+                <input class="submit-button" type="submit" name = "encrypt-or-decrypt" value="Decrypt">
+            </form>
+        </span>
+           
+
+        {% if encrypt %}
+            <!-- <h2 class="title small">Encrypt</h2> -->
+            <form class="vigenere submit-text" name = "enter" action = "http://localhost:3001/vigenere" method = "POST">
+                <h3 class="prompt">Enter the phrase you would like to encrypt and the key.</h3>
+                <input type="text" name = "plaintext" value="plaintext">
+                <input type="text" name = "key" value="key">
+                <input class="submit-button" type="submit" text="Submit">
+            </form>
+        {% endif %}
+
+        {% if decrypt %}
+            <!-- <h2 class="title small">Decrypt</h2> -->
+            <form class="vigenere submit-text" name = "enter" action = "http://localhost:3001/vigenere" method = "POST">
+                <h3 class="prompt">Enter the phrase you would like to decrypt and the key.</h3>
+                <input type="text" name = "ciphertext" value="ciphertext">
+                <input type="text" name = "key" value="key">
+                <input class="submit-button" type="submit" text="Submit">
+            </form>
+        {% endif %}
+
+        {% if plaintext %}
+            <p class="code plaintext"> {{ plaintext }}</p>
+            <p class="code ciphertext"> {{ ciphertext }}</p>
+        {% endif %}
+
+        {% if error %}
+            <p class="code error"> {{ error }}</p>
+        {% endif %}
+
+        <span class="home">
+            <a href="http://localhost:3001/">Home</a>
+        </span>
+
+    </div>
+
+    
+</body>
+</html>
+
