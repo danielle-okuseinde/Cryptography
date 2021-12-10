@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Affine - Cryptography</title>
 </head>
 <body>
@@ -12,13 +15,13 @@
         <h1 class="title">The Affine Cipher</h1>
     </div>
     <div class="content">
-        <p>Explanation</p>
-        <form name = 'enter' action = "http://localhost:3001/affine" method = "POST">
-            <h2>Enter the phrase you would like to encrypt, the a value, and the b value</h2>
+        <p class="explanation">This is the Affine Cipher. It is a monoalphabetic substitution cipher that uses the formula E(x) = (ax + b)%26, where a is an integer relatively prime to 26, b is an integer, and x is the letter value. The alphabet is numbered starting from 0 (A=0, Z=25).</p>
+        <form class="affine submit-text" name = 'enter' action = "http://localhost:3001/affine" method = "POST">
+            <h3 class="prompt">Enter the phrase you would like to encrypt, the a value, and the b value.</h3>
             <input type="text" name = "plaintext">
             <input type="text" name = "a" value="a value">
             <input type="text" name = "b" value="b value">
-            <input type="submit" text="Submit">
+            <input  class="submit-button" type="submit" text="Submit">
         </form>
 
         {% if plaintext %}
@@ -27,19 +30,19 @@
         {% endif %}
 
         {% if error %}
-            <p class="error"> {{ error }}</p>
+            <p class="code error"> {{ error }}</p>
         {% endif %}
 
         {% if crib %}
             <table>
                 <tr>
-                    <td class="table-header">Plaintext:</td>
+                    <th class="table-header">Plaintext:</td>
                     {% for letter in crib %}
                         <td>{{ letter }}</td>
                     {% endfor %}
                 </tr>
                 <tr>
-                    <td class="table-header">Ciphertext:</td>
+                    <th class="table-header">Ciphertext:</td>
                     {% for letter in crib %}
                         <td>{{ crib[letter] }}</td>
                     {% endfor %}
@@ -47,7 +50,9 @@
             </table>
         {% endif %}
 
-
+        <span class="home">
+            <a href="http://localhost:3001/">Home</a>
+        </span>
 
     </div>
 
